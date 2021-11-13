@@ -30,3 +30,22 @@ To run application use:
 ```
 flask run
 ```
+
+## Use Cases
+![alt text](https://github.com/borowskj/PUCH/blob/master/images/use_cases.png?raw=true)
+
+
+## Architecture diagram
+![alt text](https://github.com/borowskj/PUCH/blob/master/images/architecture.png?raw=true)
+
+## Technology
+- Web App - Flask
+- Azure Services:
+  - Azure Functions:
+  - Cognitive Services:
+    - Translator
+    - Speech Service
+    - Computer Vision
+    - Language Service
+
+
