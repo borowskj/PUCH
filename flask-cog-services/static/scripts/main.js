@@ -3,6 +3,10 @@ $(function() {
   //Translate text with flask route
   $("#translate").on("click", function(e) {
     e.preventDefault();
+
+    document.getElementById("sentiment").style.display = "none";
+    document.getElementById("sentiment-error").style.display = "none";
+
     var translateVal = document.getElementById("text-to-translate").value;
     var languageVal = document.getElementById("select-language").value;
     var translateRequest = { 'text': translateVal, 'to': languageVal }
@@ -33,6 +37,8 @@ $(function() {
   //Run sentiment analysis on input and translation.
   $("#sentiment-analysis").on("click", function(e) {
     e.preventDefault();
+    document.getElementById("input-sentiment-error").textContent = "";
+    document.getElementById("input-sentiment").textContent = "";
     var inputText = document.getElementById("text-to-translate").value;
     var inputLanguage = document.getElementById("detected-language-result").innerHTML;
     var outputText = document.getElementById("translation-result").value;
@@ -60,12 +66,17 @@ $(function() {
           for (var i = 0; i < data.errors.length; i++) {
             if (typeof data.errors[i] !== "undefined") {
               if (data.errors[i].id === "1") {
-                document.getElementById("input-sentiment").textContent = data.errors[i].message;
+                document.getElementById("input-sentiment-error").textContent = data.errors[i].error.innererror.message;
               }
             }
           }
           if (document.getElementById("input-sentiment").textContent !== '') {
             document.getElementById("sentiment").style.display = "block";
+            document.getElementById("sentiment-error").style.display = "none";
+          }
+          if (document.getElementById("input-sentiment-error").textContent !== '') {
+            document.getElementById("sentiment-error").style.display = "block";
+            document.getElementById("sentiment").style.display = "none";
           }
         }
       });

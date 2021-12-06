@@ -1,0 +1,26 @@
+
+.row{
+    color: #007bff;
+
+}
+hr{
+    border-top: 2px solid #007bff;
+}
+
+.new-style{
+    border-color: #007bff;
+    border-radius: 20px;
+}
+
+button:hover{
+    background-color: white !important;
+    border-color: #007bff;
+    color: #007bff !important;
+}
+
+#translation-result{
+    background-color: white;
+    border-color: #007bff;
+    color: #007bff;
+    border-radius: 20px;
+}
