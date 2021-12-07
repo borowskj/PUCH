@@ -47,5 +47,12 @@ flask run
     - Speech Service
     - Computer Vision
     - Language Service
+---
+# Review 07.12.2021
 
+### Architektura
+ <kbd><img src="https://github.com/borowskj/PUCH/blob/master/images/create_cognitive_service.png?raw=true" width="466" height="527"></kbd>
 
+### Progres zadań
+<kbd><img src="https://github.com/borowskj/PUCH/blob/master/images/review2_progress_project.png?raw=true" width="500" height="300"></kbd>
+<kbd><img src="https://github.com/borowskj/PUCH/blob/master/images/review2_progress_team_member.png?raw=true" width="500" height="300"></kbd>
