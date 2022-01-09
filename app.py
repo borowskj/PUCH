@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-import translate, sentiment, synthesize
+import translate, sentiment, synthesize, extract, sys, logging
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -33,3 +33,9 @@ def text_to_speech():
     tts.get_token()
     audio_response = tts.save_audio()
     return audio_response
+
+@app.route("/extract-text", methods = ['POST'])
+def extract_text():
+    image = request.files["file"]
+    result = extract.extractTextFromImage(image)
+    return result
