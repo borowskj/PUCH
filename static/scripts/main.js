@@ -112,6 +112,31 @@ $(function() {
     xhr.send(JSON.stringify(ttsRequest));
   });
 
+  // Extract text from image
+  $("#image_input").on("change", function(e) {
+    const file = $('#image_input').prop('files')[0];
+    const form = new FormData();
+    form.append('file', file);
+    if (form?.get('file')) {
+      $.ajax({
+        url: '/extract-text',
+        method: 'POST',
+        headers: {
+            'Content-Type':'multipart/form-data',
+            'Cache-Control': 'no-cache'
+        },
+        data: form,
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        success: function(resp) {
+          parsedResp = resp.regions.map(region => region.lines.flat().map(c => c.words).flat().map(c => c.text).join(' '))[0];
+          document.getElementById("text-to-translate").textContent = parsedResp;
+        }
+      });
+    }
+  });
+
   // Automatic voice font selection based on translation output.
   $('select[id="select-language"]').change(function(e) {
     if ($(this).val() == "en") {
