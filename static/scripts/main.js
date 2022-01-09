@@ -121,10 +121,6 @@ $(function() {
       $.ajax({
         url: '/extract-text',
         method: 'POST',
-        headers: {
-            'Content-Type':'multipart/form-data',
-            'Cache-Control': 'no-cache'
-        },
         data: form,
         processData: false,
         contentType: false,
