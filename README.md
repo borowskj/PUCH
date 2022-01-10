@@ -71,4 +71,4 @@ Praca zorganizowana była w postaci regularnych workshopów, na których zespó�
 Zakres finalnej wersji aplikacji jest zgodny z założeniami przedstawionymi na pierwszym przeglądzie projektu oraz powyższym diagramem przypadków użycia.<br>
 Użytkownik ma dostęp do wszystkich opcji projektu z poziomu strony głównej aplikacji webowej, na której znajduję się formularz danych wejściowych oraz formularz z wynikami translacji.
 <br> <br>
-Krótka prezentacja funkcjonalności aplikacji: <LINK DO YOUTUBE!!!!!!>
+Krótka prezentacja funkcjonalności aplikacji: <https://youtu.be/dBikeQEQ8Ys>
